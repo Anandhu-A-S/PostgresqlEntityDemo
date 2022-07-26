@@ -2,6 +2,7 @@
 using PostgresqlEntityDemo.Data;
 using PostgresqlEntityDemo.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PostgresqlEntityDemo.Controllers
 {
@@ -15,7 +16,8 @@ namespace PostgresqlEntityDemo.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Students> objStudentsList = _db.Students;
+           
+            IEnumerable<Students> objStudentsList = _db.Students.OrderByDescending(x => x.Id);
             return View(objStudentsList);
         }
         //get

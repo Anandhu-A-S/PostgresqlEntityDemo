@@ -10,5 +10,6 @@ namespace PostgresqlEntityDemo.Data
 
         }
         public DbSet<Students> Students { get; set; }
+        public DbSet<College> Colleges { get; set; }
     }
 }
